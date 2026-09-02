@@ -56,7 +56,7 @@ app.delete("/excluir/:id", (req, res) => {
 //app.use(cors());
 
 
-app.post("/register",(res)=>{
+app.post("/register",(req,res)=>{     // Faltava o req no register!
     const {nome} = req.body;
     const {idade} = req.body;
      let SQL = "INSERT INTO alunos(nome,idade) VALUES (?,?)";

@@ -21,7 +21,8 @@ function CadastroAluno() {
   };
 
   // Função para lidar com o clique no botão de cadastro.
-  const handleClickButton = () => {
+  const handleClickButton = (e) => {  //ADIÇÃO DO EVENTO (e) e do e.preventDefault!
+    e.preventDefault();
     // Faça uma solicitação POST para a URL especificada com os dados do aluno.
     Axios.post("http://localhost:3001/register", {
       nome: values.nome,
@@ -35,8 +36,8 @@ function CadastroAluno() {
   return (
     <div className="container mt-5">
       <div className="row justify-content-center">
-        <div className="col-md-6">
-         <div class="bg-primary p-3 mt-3 p-4 bg-primary rounded">
+        <div className="col-md-6">  {/*troquei class por className!*/}
+         <div className="bg-primary p-3 mt-3 p-4 bg-primary rounded">
           <h2>Cadastro de Aluno</h2>
           <form onSubmit={handleClickButton}>
             <div className="form-group">
